@@ -45,10 +45,10 @@ from (N1+N2+M1+M2-1) to (N2+M2-1) automatically without any design change. tic a
 
 ## Simulation Results
 
+<img src="./figs/result1.PNG" height="500">
+
 The Bit Error Curves for different configurations are plotted above. As on can see from the figure, as the number of Cyclic prefixes increases the signal estimation accuracy increases in high SNR values, which is an expected result since the cyclic convolution becomes more and more closer to ideal operation. Furthermore, frequency domain equalizers works better than time domain MMSE at high SNR values. It is also expected result because one can imagine frequency domain equalizer as infinite tap time domain equalizer. Since time domain equalizer has finite number of taps, it is obvious it tends to erroneous results more than infinite number of tap equivalents.
 Furthermore, for low SNR values all equalizers give same BER values as expected because the frequency domain operation is preferrable mainly because of its computational efficiency. It is measured by measuring equalization time and the results are also given in the next page. As one can see from the results below, the frequency domain equalization is 10x faster than time domain equivalent and increase of CP slows down the process.
-
-<img src="./figs/result1.PNG" height="500">
 
 <img src="./figs/result2.PNG" height="250">
 
