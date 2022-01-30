@@ -49,4 +49,6 @@ The Bit Error Curves for different configurations are plotted above. As on can s
 Furthermore, for low SNR values all equalizers give same BER values as expected because the frequency domain operation is preferrable mainly because of its computational efficiency. It is measured by measuring equalization time and the results are also given in the next page. As one can see from the results below, the frequency domain equalization is 10x faster than time domain equivalent and increase of CP slows down the process.
 
 ![](./figs/result1.PNG)
-![](./figs/resul2.PNG)
+
+![](./figs/result2.PNG)
+
