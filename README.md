@@ -8,31 +8,31 @@ In real life communication networks, the channels encountered are not quite repr
 
 Equalizers are simply algorithms that is designed to reduce the effect of the noise and ISI introduced by the channel. One can model communication system as the following:
 
-![](./figs/eqn1.PNG)
+<img src="./figs/eqn1.PNG" height="50">
 
 Then equalizers are designed such that:
 
-![](./figs/eqn2.PNG)
+<img src="./figs/eqn2.PNG" height="50">
 
 However, since this operation and finding optimal equalizer requires inverse matrix operations, it is quite computationally expensive operations. Thus, equalization will be done on the frequency domain to propose a solution. Before shifting to frequency domain and to utilize DFT operation, the convolution above need to be converted into the cyclic convolution. However, the transmitted signals need to be changed to apply cyclic convolution. Cyclic prefix is the symbol got from end of the data frame and added into the beginning of the data frame. By this addition, our data frame can be considered for cyclic convolution. To be concise, one can imagine cyclic prefix addition as follows:
 
-![](./figs/eqn3.PNG)
+<img src="./figs/eqn3.PNG" height="50">
 
 The number of cyclic prefixes can be adjusted for design criteria. After converting x vector to be cyclic, following convolution can be applied.
 
-![](./figs/eqn4.PNG)
+<img src="./figs/eqn4.PNG" height="50">
 
 Then by taking the DFT, one can get
 
-![](./figs/eqn5.PNG)
+<img src="./figs/eqn5.PNG" height="50">
 
 If there were no noise, the equation would become:
 
-![](./figs/eqn6.PNG)
+<img src="./figs/eqn6.PNG" height="50">
 
 However, it is Zero Forcing Equalizer in frequency domain, we need to take the noise into the consideration to realize MMSE in FD. By the following the mathematical flow discussed in page 643-647 of [the book](https://books.google.com/books/about/Digital_Communications.html?id=HroiQAAACAAJ#:~:text=Digital%20Communications%20is%20a%20classic,depth%20to%20cover%20two%20semesters.). In the page 647, it is concluded that MMSE in FD can be produced with following formula:
 
-![](./figs/eqn7.PNG)
+<img src="./figs/eqn7.PNG" height="50">
 
 Then one can take the DFT of the incoming signal, multiply this filter and take IFFT to get approximate of the information bits.
 
@@ -48,7 +48,7 @@ from (N1+N2+M1+M2-1) to (N2+M2-1) automatically without any design change. tic a
 The Bit Error Curves for different configurations are plotted above. As on can see from the figure, as the number of Cyclic prefixes increases the signal estimation accuracy increases in high SNR values, which is an expected result since the cyclic convolution becomes more and more closer to ideal operation. Furthermore, frequency domain equalizers works better than time domain MMSE at high SNR values. It is also expected result because one can imagine frequency domain equalizer as infinite tap time domain equalizer. Since time domain equalizer has finite number of taps, it is obvious it tends to erroneous results more than infinite number of tap equivalents.
 Furthermore, for low SNR values all equalizers give same BER values as expected because the frequency domain operation is preferrable mainly because of its computational efficiency. It is measured by measuring equalization time and the results are also given in the next page. As one can see from the results below, the frequency domain equalization is 10x faster than time domain equivalent and increase of CP slows down the process.
 
-![](./figs/result1.PNG)
+<img src="./figs/result1.PNG" height="500">
 
-![](./figs/result2.PNG)
+<img src="./figs/result2.PNG" height="250">
 
