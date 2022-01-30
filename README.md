@@ -8,11 +8,11 @@ In real life communication networks, the channels encountered are not quite repr
 
 Equalizers are simply algorithms that is designed to reduce the effect of the noise and ISI introduced by the channel. One can model communication system as the following:
 
-<img src="./figs/eqn1.PNG" height="50">
+<img src="./figs/eqn1.PNG" height="40">
 
 Then equalizers are designed such that:
 
-<img src="./figs/eqn2.PNG" height="50">
+<img src="./figs/eqn2.PNG" height="40">
 
 However, since this operation and finding optimal equalizer requires inverse matrix operations, it is quite computationally expensive operations. Thus, equalization will be done on the frequency domain to propose a solution. Before shifting to frequency domain and to utilize DFT operation, the convolution above need to be converted into the cyclic convolution. However, the transmitted signals need to be changed to apply cyclic convolution. Cyclic prefix is the symbol got from end of the data frame and added into the beginning of the data frame. By this addition, our data frame can be considered for cyclic convolution. To be concise, one can imagine cyclic prefix addition as follows:
 
