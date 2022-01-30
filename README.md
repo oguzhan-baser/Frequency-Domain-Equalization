@@ -28,7 +28,7 @@ Then by taking the DFT, one can get
 
 If there were no noise, the equation would become:
 
-<img src="./figs/eqn6.PNG" height="50">
+<img src="./figs/eqn6.PNG" height="55">
 
 However, it is Zero Forcing Equalizer in frequency domain, we need to take the noise into the consideration to realize MMSE in FD. By the following the mathematical flow discussed in page 643-647 of [the book](https://books.google.com/books/about/Digital_Communications.html?id=HroiQAAACAAJ#:~:text=Digital%20Communications%20is%20a%20classic,depth%20to%20cover%20two%20semesters.). In the page 647, it is concluded that MMSE in FD can be produced with following formula:
 
