@@ -12,7 +12,7 @@ Equalizers are simply algorithms that is designed to reduce the effect of the no
 
 Then equalizers are designed such that:
 
-<img src="./figs/eqn2.PNG" height="40">
+<img src="./figs/eqn2.PNG" height="35">
 
 However, since this operation and finding optimal equalizer requires inverse matrix operations, it is quite computationally expensive operations. Thus, equalization will be done on the frequency domain to propose a solution. Before shifting to frequency domain and to utilize DFT operation, the convolution above need to be converted into the cyclic convolution. However, the transmitted signals need to be changed to apply cyclic convolution. Cyclic prefix is the symbol got from end of the data frame and added into the beginning of the data frame. By this addition, our data frame can be considered for cyclic convolution. To be concise, one can imagine cyclic prefix addition as follows:
 
@@ -24,15 +24,15 @@ The number of cyclic prefixes can be adjusted for design criteria. After convert
 
 Then by taking the DFT, one can get
 
-<img src="./figs/eqn5.PNG" height="30">
+<img src="./figs/eqn5.PNG" height="35">
 
 If there were no noise, the equation would become:
 
-<img src="./figs/eqn6.PNG" height="40">
+<img src="./figs/eqn6.PNG" height="50">
 
 However, it is Zero Forcing Equalizer in frequency domain, we need to take the noise into the consideration to realize MMSE in FD. By the following the mathematical flow discussed in page 643-647 of [the book](https://books.google.com/books/about/Digital_Communications.html?id=HroiQAAACAAJ#:~:text=Digital%20Communications%20is%20a%20classic,depth%20to%20cover%20two%20semesters.). In the page 647, it is concluded that MMSE in FD can be produced with following formula:
 
-<img src="./figs/eqn7.PNG" height="60">
+<img src="./figs/eqn7.PNG" height="70">
 
 Then one can take the DFT of the incoming signal, multiply this filter and take IFFT to get approximate of the information bits.
 
